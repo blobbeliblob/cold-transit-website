@@ -1,2 +1,3 @@
 # cold-transit-website
-website for cold transit game
+
+Website for Cold Transit game.

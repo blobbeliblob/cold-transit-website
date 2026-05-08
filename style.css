@@ -1,0 +1,223 @@
+:root {
+    --bg-color: #fefbf5;
+    --fg-color: #111111;
+    --accent: #ff5f2d;
+    --accent-2: #ffc21b;
+    --dim: #6b7280;
+    --muted: #e5e7eb;
+    --border: #111111;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('fonts/Jost/static/Jost-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('fonts/Jost/static/Jost-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('fonts/Jost/static/Jost-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('fonts/Source_Code_Pro/static/SourceCodePro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: 'Jost', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    line-height: 1.2;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.hero-left {
+    flex: 0 0 50%;
+    min-width: 0;
+    max-width: 50%;
+}
+
+.hero-right {
+    flex: 0 0 50%;
+    min-width: 0;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo {
+    max-width: 100%;
+    max-height: clamp(200px, 30vh, 400px);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.downloads {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.downloads-title {
+    font-family: 'Source Code Pro', monospace;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--dim);
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+.store-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.link-btn:hover .store-icon {
+    filter: brightness(0) invert(1);
+}
+
+.footer {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 700;
+    color: var(--dim);
+    background-color: var(--bg-color);
+}
+
+.footer-logo {
+    height: 24px;
+    width: auto;
+}
+
+h1.title {
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 8rem);
+    text-transform: uppercase;
+    letter-spacing: -0.06em;
+    color: var(--fg-color);
+    margin-bottom: 0;
+    line-height: 0.85;
+    word-break: break-word;
+}
+
+h1.title .highlight {
+    color: var(--accent);
+}
+
+.tagline {
+    margin-top: 1.5rem;
+    font-family: 'Source Code Pro', monospace;
+    font-size: clamp(1rem,1.3vw, 2rem);
+    font-weight: 700;
+    color: var(--dim);
+    letter-spacing: -0.02em;
+}
+
+.links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.link-btn {
+    text-decoration: none;
+    color: var(--fg-color);
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: 3px solid var(--border);
+    padding: 1rem 2.5rem;
+    background-color: var(--bg-color);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    letter-spacing: 0.05em;
+}
+
+.link-btn:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0 var(--border);
+    background-color: var(--accent);
+    color: var(--bg-color);
+}
+
+.link-btn:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
